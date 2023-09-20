@@ -1,7 +1,11 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/**********************
+ *
+ *  
+ * File: stack.h
+ * Author: Fabio Ventura
+ *
+ *
+ **********************/
 
 #ifndef STACK_H
 #define STACK_H
@@ -13,28 +17,32 @@
 
 #include "data.h"
 
-class Stack {
+class Stack 
+{
+    public:
+        //Construtors
+        Stack();
 
-public:
+        //Destructor
+        ~Stack();
 
-    /* 
-     * write all your public method prototypes here
-     * this includes you constructor and destructor
-     */
+        //Getters
+        bool isEmpty();
+        bool peek(); // not sure if this should be a bool or void
+
+        //Setters both have to be bools
+        bool push(int, string*);
+        bool pop();
+
+
+
+    private:
+
+        // Atributes     
+        int top;
+        int size;
+        Data **stack;
     
-private:
-
-    /* 
-     * write all your private method prototypes here
-     */
-
-    // these are the only attributes you need.
-    // do not modify them or add any other attributes
-    int top;
-    int size;
-    Data **stack;
-    // notice stack is a pointer to a pointer. That means if you do
-    // a single array allocation, you will get an array of pointers
 };
 
 #endif //STACK_H
