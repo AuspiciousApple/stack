@@ -62,11 +62,11 @@ bool Stack::peek()
 
 bool Stack::isEmpty()
 {
-    return true;
-
+    return (top == -1);
 }
 
 int Stack::getSize()
 {
-    return 0;
+    return top+1; //Might need to return the total size not the current size?
+                  // Reach out to instructor to ask
 }
