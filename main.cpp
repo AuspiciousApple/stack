@@ -5,10 +5,18 @@
 
 #include "main.h"
 
+
+
 int main(int argc, char **argv) {
     // here for the rand_string() function
     // if you don't use it, get rid of this
     srand(time(NULL));
+
+
+
+
+
+    
 
     /* ***************************************************************
      * First get your arguments from the command line. Your program must
