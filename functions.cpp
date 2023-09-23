@@ -1,7 +1,12 @@
-/*
- * Your comment header here
- * modify this file as needed to complete the assignment
- */
+/*************************
+* 
+*
+* Name: Fabio Ventura
+* Coding 05
+* purpose: program to serve as function definition for the Stack adt
+*
+*
+**************************/
 
 #include "functions.h"
 

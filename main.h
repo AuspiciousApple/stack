@@ -1,7 +1,11 @@
-/*
- * your header here
- * 
- */
+/**********************
+ *
+ *  
+ * File: main.h
+ * Author: Fabio Ventura
+ *
+ *
+ **********************/
 
 #ifndef STACKS_MAIN_H
 #define STACKS_MAIN_H

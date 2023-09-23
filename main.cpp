@@ -1,8 +1,12 @@
-/*
- * your header here
- * 
- */
-
+/*************************
+* 
+*
+* Name: Fabio Ventura
+* Coding 05
+* purpose: program to serve as the driver file for testing the Stack ADT
+*
+*
+**************************/
 #include "main.h"
 
 
@@ -11,6 +15,10 @@ int main(int argc, char **argv) {
     // here for the rand_string() function
     // if you don't use it, get rid of this
     srand(time(NULL));
+
+    Data* empty = new Data;
+    int value;
+
 
 
 
