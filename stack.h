@@ -23,12 +23,12 @@ class Stack
 
         //Getters
         bool isEmpty();
-        bool peek();
+        bool peek(Data*);
         int getSize();
 
         //Setters both have to be bools
         bool push(int, string*);
-        bool pop();
+        bool pop(Data*);
 
 
 

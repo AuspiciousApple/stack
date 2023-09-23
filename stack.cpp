@@ -15,7 +15,7 @@
 
 Stack::Stack(int size)
 {
-    top = -1;
+    this->top = -1;
     this->size = size;
 
     if(size >= 2)// validation
@@ -45,19 +45,46 @@ Stack::~Stack()
 
 bool Stack::push(int id, string* information)
 {
-    return true;
+    bool pushed = false;
+
+    //Validation
+    if (top < size-1)
+    {
+        //Validation of parameters
+        if(id > 0 || !information->empty())
+        {
+            Data* newData = new Data;
+            newData->id = id;
+            newData->information = *information;
+            stack[++top] = newData;
+            pushed = true;
+        }
+    }
+    return pushed;
 }
 
-bool Stack::pop()
+bool Stack::pop(Data* empty)
 {
-    return true;
+    bool popped = false;
+    if (top > 0)
+    {
+        stack[top]->id = empty->id;
+        stack[top]->information = empty->information;
+        delete this->stack[top];
 
+
+    }
+    else
+    {
+        empty->id = -1;
+        empty->information = "";
+    }
+    return popped;
 }
 
 bool Stack::peek()
 {
     return true;
-
 }
 
 bool Stack::isEmpty()
@@ -67,6 +94,6 @@ bool Stack::isEmpty()
 
 int Stack::getSize()
 {
-    return top+1; //Might need to return the total size not the current size?
-                  // Reach out to instructor to ask
+    return size; //Might need to return the total size not the current size?
+                 // Reach out to instructor to ask
 }
