@@ -67,7 +67,7 @@ bool Stack::pop(Data* empty)
 {
     bool popped = false;
     //Validation
-    if (top > 0)
+    if (top > -1)
     {
         //Outcome
         stack[top]->id = empty->id;
@@ -90,7 +90,7 @@ bool Stack::peek(Data* empty)
 {
     bool popped = false;
     //Validation
-    if (top > 0)
+    if (top > -1)
     {
         //Outcome
         stack[top]->id = empty->id;

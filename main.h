@@ -17,11 +17,11 @@
 #include <iostream>   /* cout, endl */
 #include <string>     /* string */
 #include "functions.h"
+#include "stack.h"
 
-/*
- * additional directives here
- * 
- */
+
+using std::cout;
+using std::endl;
 
 
 #endif /* STACKS_MAIN_H */

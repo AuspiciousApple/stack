@@ -11,32 +11,66 @@
 
 
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
+    int inputValue = std::stoi(argv[1]);
+
+    if(argc != 2)
+    {
+        cout << "\t Provide 1 argument" << endl;
+    }
+
+    try
+    {
+        if(inputValue <= 0)
+        {
+        cout << "\t Provide an intger greater than 0" << endl;
+        }
+    }catch(...)
+    {
+        cout << "\t Provide an integer" << endl;
+    }
+
+    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT()
+    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
+    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
+
+
+    Stack myStack(inputValue);
+    Data* empty = new Data;
+    string h = "hello";
+
+    cout << myStack.getSize() << endl;
+
+
+
+
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.push(4, &h) << endl;
+    cout << myStack.pop(empty) << endl;
+    cout << myStack.pop(empty) << endl;
+    cout << myStack.pop(empty) << endl;
+    cout << myStack.pop(empty) << endl;
+    cout << myStack.pop(empty) << endl;
+    cout << myStack.pop(empty) << endl;
+
+
+
+
+
+   
+
+
     // here for the rand_string() function
     // if you don't use it, get rid of this
     srand(time(NULL));
 
-    Data* empty = new Data;
-    int value;
 
 
-
-
-
-
-    
-
-    /* ***************************************************************
-     * First get your arguments from the command line. Your program must
-     * accept one and only one argument not including the program name
-     * itself. That argument must be an integer. If anything else is entered
-     * in any way, terminate the program with a suitable error message
-     * telling the user how to use your program correctly.
-     * 
-     * Remember, you may not use more than one return, even in main()
-     * and you may not use exit() or anything like that.
-     * ***************************************************************/
-    
     /* ***************************************************************
      * Use the number passed in from the command line and declare a stack
      * that uses that number as the size of the stack. NOTE: Make sure
@@ -63,26 +97,15 @@ int main(int argc, char **argv) {
      * functions module. You are free to use it or make your own.
      * ***************************************************************/
 
-    /* ***************************************************************
-     * Below is some sample code for the random string function. It's
-     * only here to demonstrate the function. DELETE it once you study
-     * it and understand it and can use it yourself in your code.
-     * ***************************************************************/
+
     
     // make 20 random strings, store them, display them
-    std::string strtemp;
+    /*std::string strtemp;
     for(int i=0; i<20; i++){
         rand_string(&strtemp);
         std::cout << strtemp << std::endl;
-    }
-    
-    /* ***************************************************************
-     * Your code will be tested by applying your stack to a custom main
-     * designed to break your code. If it can be broken, you risk a
-     * substantially reduced grade, up to and including a zero.
-     * ***************************************************************/
-    
-    // WHEN YOU SUBMIT, DELETE ALL THESE INSTRUCTIONALCOMMENTS
+    }*/
+  
     
     return 0;
 }
