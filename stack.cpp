@@ -51,7 +51,7 @@ bool Stack::push(int id, string* information)
     if (top < size-1)
     {
         //Validation of parameters
-        if(id > 0 || !information->empty())
+        if(id > 0 && !information->empty())
         {
             Data* newData = new Data;
             newData->id = id;
@@ -70,8 +70,8 @@ bool Stack::pop(Data* empty)
     if (top > -1)
     {
         //Outcome
-        stack[top]->id = empty->id;
-        stack[top]->information = empty->information;
+        empty->id = stack[top]->id;
+        empty->information = stack[top]->information;
         delete this->stack[top];
         stack[top--];
         popped = true;
@@ -93,8 +93,8 @@ bool Stack::peek(Data* empty)
     if (top > -1)
     {
         //Outcome
-        stack[top]->id = empty->id;
-        stack[top]->information = empty->information;
+        empty->id = stack[top]->id;
+        empty->information = stack[top]->information;
         popped = true;
     }
     //Validation
@@ -116,3 +116,5 @@ int Stack::getSize()
 {
     return size;
 }
+// Delete this b4 submitting
+

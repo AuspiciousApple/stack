@@ -3,7 +3,7 @@
 *
 * Name: Fabio Ventura
 * Coding 05
-* purpose: program to serve as function definition for the Stack adt
+* purpose: program to serve as function definitions
 *
 *
 **************************/

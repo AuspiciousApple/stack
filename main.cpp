@@ -13,92 +13,104 @@
 
 int main(int argc, char **argv) 
 {
-    int inputValue = std::stoi(argv[1]);
+    int inputValue = std::stoi(argv[1]);// string to int conversion for the second argument
+    bool status = false;
+    int value = 0;
 
+    //validation
     if(argc != 2)
     {
         cout << "\t Provide 1 argument" << endl;
     }
-
+    
     try
-    {
+    {   //validation
         if(inputValue <= 0)
         {
         cout << "\t Provide an intger greater than 0" << endl;
+        status = true;
         }
     }catch(...)
     {
         cout << "\t Provide an integer" << endl;
     }
 
+    if(status == false)
+    {
+        cout << "error occured. Exiting program" << endl;
+    }
+
+    else
+
     // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT()
     // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
     // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
 
 
-    Stack myStack(inputValue);
-    Data* empty = new Data;
-    string h = "hello";
-
-    cout << myStack.getSize() << endl;
-
-
-
-
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.push(4, &h) << endl;
-    cout << myStack.pop(empty) << endl;
-    cout << myStack.pop(empty) << endl;
-    cout << myStack.pop(empty) << endl;
-    cout << myStack.pop(empty) << endl;
-    cout << myStack.pop(empty) << endl;
-    cout << myStack.pop(empty) << endl;
-
-
-
-
-
-   
-
-
-    // here for the rand_string() function
-    // if you don't use it, get rid of this
     srand(time(NULL));
 
+    //Creating stack of input value size
+
+    //Empty struct for use in the program
+    Data* empty = new Data;
+
+    //string for testing
+    string test = "hello";
+
+    //Variable for testing
+    value = 5;
 
 
-    /* ***************************************************************
-     * Use the number passed in from the command line and declare a stack
-     * that uses that number as the size of the stack. NOTE: Make sure
-     * your stack checks the number passed in to it. You cannot rely
-     * on main checking the number first, each part of every program and
-     * ADT is always responsible for it's own error checking. Main must
-     * check the user gave it an int. The stack must check main()
-     * gave it a good number. This is proper error checking, no part of
-     * any program can assume it's caller is behaving correctly. To do this,
-     * try passing -1 or 0 or some other "bad" number to the stack from
-     * main and make sure your stack rejects it, or defaults to some
-     * pre-defined default value. This will be tested during grading.
-     * ***************************************************************/
+    ////////////////////Testing empty and getSize methods/////////////////
 
-    
-    /* ***************************************************************
-     * Throughly test your stack. You must perform an exhaustive series
-     * of tests on your stack. Show all possible ways your stack can be used
-     * and abused and prove that your stack can gracefully handle ALL cases.
-     * You must use automated testing (no user input). First cover all
-     * explicit cases which you can think of, then execute random operations.
-     * When generating test data, use random ints for ids and random short
-     * strings for string. There is a string generator made for you in the
-     * functions module. You are free to use it or make your own.
-     * ***************************************************************/
+    //Testing constructor
+    Stack myStack(inputValue);
+
+    //Testing failed condition of constructor
+
+    cout << "\t Testing empty Methods" << endl << endl;
+
+    if(myStack.isEmpty())
+    {
+        cout << "\t Stack is empty" << endl;
+        cout << "\t Size of stack is: " << myStack.getSize() << endl;
+    }
+
+    else 
+    {
+        cout << "\t Stack is not-empty" << endl;
+        cout << "\t Size of stack is: " << myStack.getSize() << endl;
+    }
 
 
-    
+    cout << endl;
+    myStack.push(value, &test);
+    cout << myStack.push(value, &test) << endl;
+    cout << value << test << endl;
+
+
+    if(myStack.peek(empty))
+    {
+        cout << "peeked: " << empty->id << " and " << empty->information << endl;
+    }
+    else 
+    {
+        cout << "underflow error" << endl;
+    }
+
+
+    if(myStack.push(value, &test));
+    {
+        cout << "pushed " << endl;
+
+
+
+
+
+
+
+
+    }
     // make 20 random strings, store them, display them
     /*std::string strtemp;
     for(int i=0; i<20; i++){
