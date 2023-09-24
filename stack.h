@@ -12,6 +12,8 @@
 
 #include "data.h"
 
+#define SIZE 10
+
 class Stack 
 {
     public:

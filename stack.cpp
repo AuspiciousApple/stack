@@ -16,19 +16,18 @@
 Stack::Stack(int size)
 {
     this->top = -1;
-    this->size = size;
 
     if(size >= 2)// validation
     {   
         //outcome
-        this->stack = new Data* [this->size];
+        this->size = size;
     }
     else
     {
         //default outcome
-        this->size = 10;
-        this->stack = new Data* [this->size];
+        this->size = SIZE;
     }
+    this->stack = new Data*[this->size];
 }
 
 Stack::~Stack()
@@ -48,17 +47,14 @@ bool Stack::push(int id, string* information)
     bool pushed = false;
 
     //Validation
-    if (top < size-1)
+    if (top < size-1 && id > 0 && !information->empty())
     {
-        //Validation of parameters
-        if(id > 0 && !information->empty())
-        {
-            Data* newData = new Data;
-            newData->id = id;
-            newData->information = *information;
-            stack[++top] = newData;
-            pushed = true;
-        }
+        Data* newData = new Data;
+        newData->id = id;
+        newData->information = *information;
+        stack[++top] = newData;
+        pushed = true;
+        
     }
     return pushed;
 }

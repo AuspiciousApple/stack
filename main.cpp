@@ -16,25 +16,25 @@ int main(int argc, char **argv)
     bool status = false;
     int inputValue;
     //validation
-    if(argc > 2)
+    if(argc != 2)
     {
         cout << "Provide 1 argument" << endl;
     }
-    
-    try
-    {   //validation
-        inputValue = std::stoi(argv[1]);// string to int conversion for the second argument
-
-        if(inputValue <= 0)
-        {
-        cout << "Provide an intger greater than 0" << endl;
-        }
-    }catch(...)
-
+    else
     {
-        cout << "Provide an integer" << endl;
-    }
+        try
+        {   //validation
+            inputValue = std::stoi(argv[1]);// string to int conversion for the second argument
 
+            if(inputValue <= 0)
+            {
+            cout << "Provide an intger greater than 0" << endl;
+            }
+        }catch(...)
+        {
+            cout << "Provide an integer" << endl;
+        }
+    }
     if(inputValue > 2)
     {
         status = true;
@@ -47,11 +47,6 @@ int main(int argc, char **argv)
 
     else
     {
-
-    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT()
-    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
-    // TEMINATE PROGRAM HERE SOMEHOW WITOHTU USING MORE THAN ONE RETURN OR EXIT
-
 
     srand(time(NULL));
 
