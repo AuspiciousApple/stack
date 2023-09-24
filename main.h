@@ -19,6 +19,10 @@
 #include "functions.h"
 #include "stack.h"
 
+#define MAXINT 10000
+#define NEGVALUE -3
+#define MULTIPLIER 11
+
 
 using std::cout;
 using std::endl;

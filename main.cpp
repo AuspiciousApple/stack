@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 {
     int inputValue = std::stoi(argv[1]);// string to int conversion for the second argument
     bool status = false;
-    int value = 0;
 
     //validation
     if(argc != 2)
@@ -54,40 +53,34 @@ int main(int argc, char **argv)
     //Empty struct for use in the program
     Data* empty = new Data;
 
-    //string for testing
-    string test = "hello";
-
-    //Variable for testing
-    value = 5;
+    //string and int for testing
+    string strtemp = "hello";
+    int value = 0;
 
 
-    ////////////////////Testing empty and getSize methods/////////////////
+    ////////////////////Testing Individual methods/////////////////
 
     //Testing constructor
     Stack myStack(inputValue);
 
     //Testing failed condition of constructor
+    Stack myStackDefault(NEGVALUE);
+    cout << "Size of default consturctor: " << myStackDefault.getSize() << endl << endl;
 
-    cout << "\t Testing empty Methods" << endl << endl;
+
+    cout << "Testing Individual Methods" << endl << endl;
+
+    cout << "Size of stack is: " << myStack.getSize() << endl;
+
 
     if(myStack.isEmpty())
     {
-        cout << "\t Stack is empty" << endl;
-        cout << "\t Size of stack is: " << myStack.getSize() << endl;
+        cout << "Stack is empty" << endl;
     }
-
     else 
     {
-        cout << "\t Stack is not-empty" << endl;
-        cout << "\t Size of stack is: " << myStack.getSize() << endl;
+        cout << "Stack is not-empty" << endl;
     }
-
-
-    cout << endl;
-    myStack.push(value, &test);
-    cout << myStack.push(value, &test) << endl;
-    cout << value << test << endl;
-
 
     if(myStack.peek(empty))
     {
@@ -95,28 +88,89 @@ int main(int argc, char **argv)
     }
     else 
     {
-        cout << "underflow error" << endl;
+        cout << "Underflow error" << endl;
     }
 
-
-    if(myStack.push(value, &test));
+    if(myStack.pop(empty))
     {
-        cout << "pushed " << endl;
-
-
-
-
-
-
-
-
+        cout << "Popped successfuly" << endl;
     }
-    // make 20 random strings, store them, display them
-    /*std::string strtemp;
-    for(int i=0; i<20; i++){
+    else
+    {
+        cout << "Underflow error" << endl << endl;
+    }
+
+    if(myStack.push(value, &strtemp))
+    {
+        cout << "Successfully pushed: " << value << " and " << strtemp << endl;
+    }
+    else
+    {
+        cout << "Invalid arguments given" << endl; 
+    }
+
+    cout << endl << endl;
+
+    ////////////////////Testing Full Stack operations/////////////////
+    ////////////////////Testing Full Stack operations/////////////////
+
+    cout << "Testing Full Stack Operations" << endl << endl << endl;
+    cout << "Filling stack..." << endl;
+
+    for (int i = 0; i < inputValue*MULTIPLIER; i++)
+    {
+        //Generating a postive or negative number
+        value = rand()%2 ? -(i+1): i+1;
+
+        //generating a random string
         rand_string(&strtemp);
-        std::cout << strtemp << std::endl;
-    }*/
+
+        if (myStack.push(value, &strtemp))
+        {
+            cout << "Pushed " << value << " and " << strtemp << endl;
+        }
+        else 
+        {
+            cout << "Overflow error" << endl;
+        }
+    }
+
+    if(myStack.isEmpty())
+    {
+        cout << "Stack is empty" << endl;
+    }
+    else 
+    {
+        cout << "Stack is not-empty" << endl;
+    }
+
+    if(myStack.peek(empty))
+    {
+        cout << "peeked: " << empty->id << " and " << empty->information << endl;
+    }
+    else 
+    {
+        cout << "Underflow error" << endl;
+    }
+
+    if(myStack.pop(empty))
+    {
+        cout << "Popped successfuly" << endl;
+    }
+    else
+    {
+        cout << "Underflow error" << endl << endl;
+    }
+
+    ////////////////////Emptying Stack Completelty////////////////////
+    cout << "Emptying Stack... " << endl;
+    while(!myStack.isEmpty())
+    {
+        myStack.pop(empty);
+    }   
+    
+
+
   
     
     return 0;
