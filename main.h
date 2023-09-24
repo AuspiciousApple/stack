@@ -19,9 +19,9 @@
 #include "functions.h"
 #include "stack.h"
 
-#define MAXINT 10000
-#define NEGVALUE -3
+#define MAX_INT 10000
 #define MULTIPLIER 11
+#define CHOICES 8
 
 
 using std::cout;
